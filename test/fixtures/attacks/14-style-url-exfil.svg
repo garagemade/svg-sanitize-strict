@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="g"><stop offset="0" stop-color="#2849ff"/></linearGradient></defs>
+  <style>
+    rect { fill: url(https://attacker.invalid/paint.svg#g); }
+    .bg { background-image: url('https://attacker.invalid/bg.png'); }
+    .cur { cursor: url("https://attacker.invalid/cursor.cur"), pointer; }
+    .ok { fill: url(#g); }
+    .inline { fill: url(data:image/png;base64,iVBORw0KGgo=); }
+  </style>
+  <rect class="ok" width="64" height="64"/>
+</svg>

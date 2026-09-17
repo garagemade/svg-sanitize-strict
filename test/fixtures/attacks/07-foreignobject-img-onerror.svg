@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <foreignObject width="64" height="64">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <img src="https://attacker.invalid/missing.png" onerror="EXEC_CANARY()"/>
+      <iframe src="https://attacker.invalid/EXEC_CANARY"></iframe>
+    </div>
+  </foreignObject>
+  <rect width="64" height="64" fill="#2849ff"/>
+</svg>

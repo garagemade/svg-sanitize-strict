@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="ringBack" cx="32" cy="24" r="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef0ff"/>
+      <stop offset="1" stop-color="#bcc6ff"/>
+    </radialGradient>
+    <linearGradient id="ringSheen" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00d4ff"/>
+      <stop offset="0.45" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <radialGradient id="ringGloss" cx="27" cy="26" r="14" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#ringBack)"/>
+  <path fill="#2849ff" fill-opacity="0.18" fill-rule="evenodd" d="M32 5A27 27 0 1 0 32 59A27 27 0 1 0 32 5Z M32 11A21 21 0 1 1 32 53A21 21 0 1 1 32 11Z"/>
+  <path fill="none" stroke="#2849ff" stroke-width="6" stroke-linecap="round" d="M32 11.5A20.5 20.5 0 1 1 11.8 35.6"/>
+  <path fill="none" stroke="url(#ringSheen)" stroke-width="6" stroke-linecap="round" d="M32 11.5A20.5 20.5 0 1 1 11.8 35.6"/>
+  <g fill="#101a6b" opacity="0.45">
+    <rect x="31" y="2.5" width="2" height="5" rx="1"/>
+    <rect x="31" y="2.5" width="2" height="5" rx="1" transform="rotate(60 32 32)"/>
+    <rect x="31" y="2.5" width="2" height="5" rx="1" transform="rotate(120 32 32)"/>
+    <rect x="31" y="2.5" width="2" height="5" rx="1" transform="rotate(180 32 32)"/>
+    <rect x="31" y="2.5" width="2" height="5" rx="1" transform="rotate(240 32 32)"/>
+    <rect x="31" y="2.5" width="2" height="5" rx="1" transform="rotate(300 32 32)"/>
+  </g>
+  <circle cx="32" cy="32" r="12" fill="#2849ff"/>
+  <circle cx="32" cy="32" r="12" fill="url(#ringGloss)"/>
+  <path fill="#ffffff" d="M34.5 24L27 33.5h4.5L29.5 42l7.5-9.5h-4.5z"/>
+</svg>

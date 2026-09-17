@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="ok"><stop offset="0" stop-color="#2849ff"/></linearGradient></defs>
+  <rect width="64" height="64"
+        fill="url(https://attacker.invalid/paint.svg#g)"
+        stroke="url('https://attacker.invalid/stroke.svg#s')"
+        filter="url(https://attacker.invalid/filter.svg#f)"
+        mask="url(https://attacker.invalid/mask.svg#m)"
+        clip-path="url(https://attacker.invalid/clip.svg#c)"
+        marker-end="url(https://attacker.invalid/marker.svg#m)"/>
+  <circle cx="32" cy="32" r="10" fill="url(#ok)" stroke="#000"/>
+</svg>

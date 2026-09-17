@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .a { background-image: image-set("https://attacker.invalid/a.png" 1x, "https://attacker.invalid/a@2x.png" 2x); }
+    .b { background-image: -webkit-image-set(url(https://attacker.invalid/b.png) 1x); }
+    .c { fill: #2849ff; }
+  </style>
+  <rect class="c" width="64" height="64" style="background-image:image-set('https://attacker.invalid/c.png' 1x)"/>
+</svg>

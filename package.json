@@ -1,0 +1,65 @@
+{
+  "name": "svg-sanitize-strict",
+  "version": "0.1.0",
+  "description": "Strict SVG sanitiser on top of DOMPurify. Removes scripts, event handlers and every external reference (<image>, <use>, <feImage>, @import, CSS url()) so a sanitised SVG cannot beacon out when it is rendered.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garagemade/svg-sanitize-strict.git"
+  },
+  "homepage": "https://github.com/garagemade/svg-sanitize-strict#readme",
+  "bugs": {
+    "url": "https://github.com/garagemade/svg-sanitize-strict/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "peerDependencies": {
+    "dompurify": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "dompurify": "^3.4.13",
+    "jsdom": "^26.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.2.4"
+  },
+  "keywords": [
+    "svg",
+    "sanitize",
+    "sanitizer",
+    "dompurify",
+    "xss",
+    "security",
+    "external-references",
+    "ssrf",
+    "svg-security"
+  ]
+}

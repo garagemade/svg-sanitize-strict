@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="badgeFace" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4f7cff"/>
+      <stop offset="0.55" stop-color="#2849ff"/>
+      <stop offset="1" stop-color="#101a6b"/>
+    </linearGradient>
+    <linearGradient id="badgeRim" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset="1" stop-color="#ff7a45"/>
+    </linearGradient>
+    <linearGradient id="badgeGloss" x1="8" y1="4" x2="32" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="badgeHalo" cx="32" cy="30" r="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0.6" stop-color="#2849ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#2849ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" fill="url(#badgeHalo)"/>
+  <path fill="url(#badgeFace)" d="M32 4L56 13V31C56 45 45.5 54.5 32 60C18.5 54.5 8 45 8 31V13Z"/>
+  <path fill="url(#badgeRim)" fill-rule="evenodd" d="M32 4L56 13V31C56 45 45.5 54.5 32 60C18.5 54.5 8 45 8 31V13Z M32 9.5L51 16.6V31C51 42.3 42.6 50.2 32 54.8C21.4 50.2 13 42.3 13 31V16.6Z"/>
+  <path fill="url(#badgeGloss)" d="M32 4L8 13V31C8 45 18.5 54.5 32 60Z"/>
+  <path fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M22 31.5L29 38.5L43 24.5"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    @font-face { font-family: "Tracker"; src: url(https://attacker.invalid/tracker.woff2) format("woff2"); }
+    text { font-family: "Tracker", sans-serif; fill: #2849ff; }
+  </style>
+  <text x="0" y="32">Hello</text>
+</svg>

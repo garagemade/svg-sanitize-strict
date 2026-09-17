@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="menuPlate" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2849ff"/>
+      <stop offset="1" stop-color="#101a6b"/>
+    </linearGradient>
+    <linearGradient id="menuBar" x1="16" y1="20" x2="48" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00d4ff"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <linearGradient id="menuGloss" x1="10" y1="2" x2="32" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#menuPlate)"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#menuGloss)"/>
+  <g fill="none" stroke-width="6" stroke-linecap="round">
+    <path stroke="url(#menuBar)" d="M18 22h28"/>
+    <path stroke="#ffffff" d="M18 32h28"/>
+    <path stroke="url(#menuBar)" d="M18 42h17"/>
+  </g>
+  <circle cx="44" cy="42" r="3.2" fill="#ffd166"/>
+</svg>

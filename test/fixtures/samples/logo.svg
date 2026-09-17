@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="logoPlate" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4f7cff"/>
+      <stop offset="0.5" stop-color="#2849ff"/>
+      <stop offset="1" stop-color="#101a6b"/>
+    </linearGradient>
+    <linearGradient id="logoGloss" x1="10" y1="2" x2="30" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="logoMark" x1="20" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d8e2ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#logoPlate)"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#logoGloss)"/>
+  <path fill="none" stroke="url(#logoMark)" stroke-width="8" stroke-linecap="round" d="M41.9 22.1A14 14 0 1 0 46 32L35.5 32"/>
+</svg>

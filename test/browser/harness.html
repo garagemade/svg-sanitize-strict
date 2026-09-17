@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>running</title>
+<script type="importmap">{ "imports": { "dompurify": "./purify.es.mjs" } }</script>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+  // Execution canary: every attack fixture's payload calls this.
+  window.__executed = [];
+  window.EXEC_CANARY = function () { window.__executed.push(new Error().stack || "?"); };
+</script>
+<script type="module">
+  const mode = new URLSearchParams(location.search).get("mode") || "sanitized";
+  const fixtures = await (await fetch("./fixtures.json")).json();
+  const results = { mode, cssom: "replaceSync" in CSSStyleSheet.prototype, attacks: {}, samples: {}, legit: {}, errors: [] };
+
+  const serialize = (n) => new XMLSerializer().serializeToString(n);
+  const parseInert = (s) => new DOMParser().parseFromString(s.trim(), "image/svg+xml").documentElement;
+  const isSafeRef = (v) => { v = v.trim(); return v.startsWith("#") || /^data:image\//i.test(v); };
+  const unescapeCss = (css) => css
+    .replace(/\\([0-9a-fA-F]{1,6})(?:\r\n|[ \t\n\r\f])?/g, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/\\(.)/g, "$1");
+  const cssReaches = (css) => {
+    const out = []; const t = unescapeCss(css);
+    if (/@import/i.test(t)) out.push("@import");
+    for (const m of t.matchAll(/(?:url|src)\(\s*(['"]?)(.*?)\1\s*\)/gi)) if (!isSafeRef(m[2] || "")) out.push(`url(${m[2]})`);
+    for (const m of t.matchAll(/(?:image-set|image)\(([^)]*)\)/gi)) for (const s of (m[1] || "").matchAll(/(['"])(.*?)\1/g)) if (!isSafeRef(s[2] || "")) out.push(`image-set(${s[2]})`);
+    return out;
+  };
+  const liveSurface = (root) => {
+    const f = [];
+    const walk = (node) => {
+      if (node.nodeType === 7) { f.push(`<?${node.target}?>`); return; }
+      if (node.nodeType !== 1) return;
+      const tag = node.localName, lc = tag.toLowerCase();
+      if (lc === "script" || lc === "foreignobject") f.push(`<${tag}>`);
+      for (const a of Array.from(node.attributes)) {
+        const where = `<${tag} ${a.name}>`;
+        if (/^on/i.test(a.localName)) f.push(`${where} handler`);
+        if (/^(javascript|vbscript|data:text\/html)/i.test(a.value.replace(/[\s\x00-\x1f]/g, ""))) f.push(`${where} = ${a.value}`);
+        if (a.localName === "href" || a.localName === "src") { if (!isSafeRef(a.value)) f.push(`${where} = ${a.value}`); }
+        else for (const r of cssReaches(a.value)) f.push(`${where} ${r}`);
+      }
+      if (lc === "style") for (const r of cssReaches(node.textContent || "")) f.push(`<style> ${r}`);
+      for (const c of Array.from(node.childNodes)) walk(c);
+    };
+    walk(root); return f;
+  };
+
+  const stage = document.getElementById("stage");
+  const mount = (el) => { const box = document.createElement("div"); box.style.cssText = "width:64px;height:64px;display:inline-block"; box.appendChild(el); stage.appendChild(box); };
+
+  if (mode === "raw") {
+    // Control run: render the attack fixtures untouched.
+    for (const [name, src] of Object.entries(fixtures.attacks)) {
+      try { mount(document.importNode(parseInert(src), true)); results.attacks[name] = "mounted"; }
+      catch (e) { results.attacks[name] = "parse-failed: " + e.message; }
+    }
+  } else {
+    const { sanitizeSvg, SvgSanitizeError } = await import("./index.js");
+    for (const [name, src] of Object.entries(fixtures.attacks)) {
+      try {
+        const clean = sanitizeSvg(src);
+        const out = serialize(clean);
+        const r = { live: liveSurface(clean), canary: /attacker\.invalid|EXEC_CANARY/.test(out), out };
+        // stability: sanitising the output again changes nothing
+        r.stable = serialize(sanitizeSvg(out)) === out;
+        results.attacks[name] = r;
+        mount(clean);
+      } catch (e) {
+        results.attacks[name] = { rejected: e instanceof SvgSanitizeError ? e.code : String(e) };
+      }
+    }
+    for (const group of ["samples", "legit"]) {
+      for (const [name, src] of Object.entries(fixtures[group])) {
+        try {
+          const clean = sanitizeSvg(src);
+          const before = serialize(parseInert(src)), after = serialize(clean);
+          results[group][name] = { identical: before === after, live: liveSurface(clean), after };
+          mount(clean);
+        } catch (e) { results[group][name] = { rejected: String(e) }; }
+      }
+    }
+    // Browser-only CSS path: a sheet that reaches out is normalised via CSSOM.
+    const css = sanitizeSvg(fixtures.attacks["13-style-import"]).querySelector("style").textContent;
+    results.cssomSample = css;
+  }
+  window.__results = results;
+  document.title = "done";
+</script>
+</body>
+</html>

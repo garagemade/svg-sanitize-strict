@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="ok"><stop offset="0" stop-color="#2849ff"/></linearGradient></defs>
+  <rect width="64" height="64" style="fill:url(https://attacker.invalid/paint.svg#g);stroke:#000"/>
+  <circle cx="32" cy="32" r="10" style="fill:url(#ok);stroke:url('https://attacker.invalid/s.svg#s');stroke-width:2"/>
+</svg>

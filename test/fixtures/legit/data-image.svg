@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" width="32" height="32"/>
+  <image xlink:href="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg'&gt;&lt;rect width='8' height='8' fill='%232849ff'/&gt;&lt;/svg&gt;" x="32" width="32" height="32"/>
+  <style>.tile { fill: url(data:image/png;base64,iVBORw0KGgo=); }</style>
+</svg>

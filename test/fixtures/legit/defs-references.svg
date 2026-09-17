@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 64">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f7cff"/>
+      <stop offset="1" stop-color="#101a6b"/>
+    </linearGradient>
+    <linearGradient id="inherits" href="#base" x1="1" y1="0" x2="0" y2="1"/>
+    <linearGradient id="inheritsXlink" xlink:href="#base"/>
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#2849ff"/>
+    </pattern>
+    <mask id="fade"><rect width="128" height="64" fill="url(#base)"/></mask>
+    <filter id="blur"><feGaussianBlur stdDeviation="1.5"/></filter>
+    <filter id="tex"><feImage href="#swatch"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#101a6b"/>
+    </marker>
+    <path id="curve" d="M8 48C40 8 88 8 120 48"/>
+    <rect id="swatch" width="8" height="8" fill="#ffd166"/>
+  </defs>
+  <rect width="40" height="40" fill="url(#inherits)" stroke="url(#inheritsXlink)"/>
+  <rect x="44" width="40" height="40" fill="url(#dots)" mask="url(#fade)"/>
+  <rect x="88" width="40" height="40" fill="#2849ff" filter="url(#blur)" style="filter:url(#tex)"/>
+  <path d="M8 60L120 60" stroke="#101a6b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text font-size="8" fill="#101a6b"><textPath href="#curve">along a curve</textPath></text>
+  <a href="#swatch"><circle cx="64" cy="56" r="3" fill="#ffd166"/></a>
+</svg>

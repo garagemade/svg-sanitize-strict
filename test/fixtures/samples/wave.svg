@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="waveSky" x1="0" y1="2" x2="0" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1f8f" stop-opacity="0"/>
+      <stop offset="1" stop-color="#2f7cff" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="waveShimmer" x1="4" y1="34" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="waveSun" cx="41" cy="15" r="11" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff3c4"/>
+      <stop offset="1" stop-color="#ffb020" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0b1f8f"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#waveSky)"/>
+  <circle cx="44" cy="18" r="8" fill="#ffc53d"/>
+  <circle cx="44" cy="18" r="8" fill="url(#waveSun)"/>
+  <g transform="translate(0 2)">
+    <path fill="#1f5bd8" opacity="0.6" d="M2 34C12 26 20 42 32 36C44 30 52 42 62 34V60H2Z"/>
+    <path fill="#1436c8" d="M2 42C12 34 20 50 32 44C44 38 52 50 62 42V60H2Z"/>
+    <path fill="url(#waveShimmer)" d="M2 42C12 34 20 50 32 44C44 38 52 50 62 42V60H2Z"/>
+  </g>
+  <path fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M6 36C14 29 21 44 32 38.5C43 33 49 45 58 37.5"/>
+  <path fill="#ffffff" opacity="0.35" d="M10 50C18 45 24 55 33 50.5C42 46 48 54 56 49.5"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#2849ff">
+    <set attributeName="fill" to="#ff0000" begin="0s" onbegin="EXEC_CANARY()"/>
+  </rect>
+</svg>

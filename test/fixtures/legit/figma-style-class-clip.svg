@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+.cls-1 { fill: #2849FF; }
+.cls-2 { fill: #FFD166; stroke: #101A6B; stroke-width: 2px; }
+</style>
+<g clip-path="url(#clip0_12_34)">
+<rect width="64" height="64" rx="16" class="cls-1"/>
+<circle cx="32" cy="32" r="12" class="cls-2"/>
+<path d="M20 44C24 40 40 40 44 44" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_12_34">
+<rect width="64" height="64" rx="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
