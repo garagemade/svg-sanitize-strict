@@ -43,11 +43,19 @@ Rendered in Chromium, the first output makes four requests to `attacker.invalid`
 
 ## Install
 
+Not published to npm — install straight from GitHub:
+
 ```sh
-npm install svg-sanitize-strict dompurify
+npm install github:garagemade/svg-sanitize-strict dompurify
 ```
 
 DOMPurify `^3.2.0` is a peer dependency.
+
+Pin to a tag for reproducible builds:
+
+```sh
+npm install github:garagemade/svg-sanitize-strict#v0.1.0 dompurify
+```
 
 ## Use
 
